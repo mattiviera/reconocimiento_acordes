@@ -24,7 +24,7 @@ Este proyecto utiliza una **red neuronal** entrenada con **TensorFlow/Keras** pa
 1. **Clona este repositorio:**
 
    ```bash
-   git clone
+   git clone https://github.com/mattiviera/reconocimiento_acordes.git
    cd reconocimiento_acordes
    ```
 
