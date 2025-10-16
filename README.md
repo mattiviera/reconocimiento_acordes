@@ -79,31 +79,6 @@ Este proyecto utiliza una **red neuronal** entrenada con **TensorFlow/Keras** pa
    - Haz clic nuevamente en el botón para **detener la grabación**.
    - La aplicación mostrará el **acorde reconocido** y la **confianza** de la predicción.
 
-## Estructura del Proyecto
-
-reconocimiento_acordes/
-│
-├── data/
-│ ├── raw/ # Audios originales por acorde (ej: C/, G/, Am/)
-│ └── labels.json # Mapeo de nombre de acorde a índice
-├── models/
-│ └── modelo_entrenado.h5 # Modelo entrenado (guardado aquí)
-├── src/
-│ ├── preprocess.py # Preprocesamiento de audio
-│ ├── model.py # Definición del modelo
-│ ├── train.py # Entrenamiento del modelo
-│ ├── predict.py # Predicción en tiempo real (usado por Flask)
-│ └── utils.py # Funciones auxiliares
-├── static/
-│ ├── style.css # Hoja de estilos de la interfaz web
-│ └── script.js # Lógica del frontend (grabación/envío)
-├── templates/
-│ └── index.html # Página principal de la interfaz web
-├── app.py # Aplicación Flask principal
-├── main.py # Script para entrenar o predecir desde consola
-├── requirements.txt # Dependencias de Python
-└── README.md # Este archivo.
-
 ## Notas
 
 - Asegúrate de otorgar permiso al navegador para acceder al micrófono.
