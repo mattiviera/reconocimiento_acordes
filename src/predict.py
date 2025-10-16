@@ -4,7 +4,7 @@ import librosa
 import tensorflow as tf
 from .utils import load_labels
 import os
-import soundfile as sf  # Agregamos soundfile en lugar de librosa.output
+import soundfile as sf  
 
 def record_audio(seconds=3, rate=22050):
     p = pyaudio.PyAudio()

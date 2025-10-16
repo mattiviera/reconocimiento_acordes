@@ -3,7 +3,7 @@ from .preprocess import load_data
 from .model import create_model
 from .utils import save_labels
 from sklearn.model_selection import train_test_split
-import tensorflow as tf # Importamos tensorflow para usar EarlyStopping
+import tensorflow as tf
 
 def train_model():
     X, y, labels = load_data()

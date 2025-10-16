@@ -7,16 +7,14 @@ import soundfile as sf
 import io
 import os
 
-# --- Importar funciones de tu proyecto ---
-# Asegúrate de que las rutas relativas sean correctas
+
 from src.utils import load_labels
 
 # --- Inicializar Flask ---
 app = Flask(__name__)
 
 # --- Cargar modelo y etiquetas al iniciar la app ---
-# Es crucial hacerlo aquí para no recargarlo en cada petición
-MODEL_PATH = 'models/modelo_entrenado.h5' # Ajusta la ruta si es necesario
+MODEL_PATH = 'models/modelo_entrenado.h5' 
 LABELS_PATH = 'data/labels.json'
 
 print("Cargando modelo...")
