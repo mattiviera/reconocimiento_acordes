@@ -102,7 +102,7 @@ reconocimiento_acordes/
 ├── app.py # Aplicación Flask principal
 ├── main.py # Script para entrenar o predecir desde consola
 ├── requirements.txt # Dependencias de Python
-└── README.md # Este archivo
+└── README.md # Este archivo.
 
 ## Notas
 
