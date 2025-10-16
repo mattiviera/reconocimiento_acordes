@@ -1,0 +1,104 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C Extension Files
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+venv.bak/
+env.bak/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+# (use e.g. .idea/ in your .gitignore if you want to ignore the entire idea folder)
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Lab
+/lab/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local configuration files
+config.py
+.env
+.env.local
+.env.dev
+.env.prod
+.env.testing
+.env.staging
+*.env
+.envrc
+.env.backup
+
+# Model files (opcional, si no quieres subirlos al repo)
+models/*.h5
+models/*.keras
+models/*.pb
+
+# Data files (opcional, si no quieres subirlos al repo)
+data/raw/
+data/processed/
+# Si solo quieres excluir los datos pero mantener las carpetas:
+# data/raw/*
+# !data/raw/.gitkeep
+# data/processed/*
+# !data/processed/.gitkeep

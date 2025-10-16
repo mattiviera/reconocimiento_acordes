@@ -1,0 +1,112 @@
+# Reconocimiento de Acorde de Guitarra
+
+Este proyecto utiliza una **red neuronal** entrenada con **TensorFlow/Keras** para **reconocer acordes de guitarra** a partir de **audio grabado en tiempo real** a través del micrófono del navegador. La interfaz web está construida con **Flask**.
+
+## Características
+
+- Reconocimiento de acordes en tiempo real desde el navegador.
+- Interfaz web simple e intuitiva.
+- Arquitectura CNN para clasificación de espectrogramas de audio.
+- Preprocesamiento de audio consistente entre entrenamiento y predicción.
+
+## Requisitos
+
+- Python 3.8 o superior
+- TensorFlow
+- Librosa
+- Flask
+- SoundFile
+- PyAudio (opcional, para entrenamiento local si se usa `src/predict.py` directamente)
+- Navegador web moderno (Chrome, Firefox, Edge)
+
+## Instalación
+
+1. **Clona este repositorio:**
+
+   ```bash
+   git clone
+   cd reconocimiento_acordes
+   ```
+
+2. **Crea un entorno virtual (recomendado):**
+
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activa el entorno virtual:**
+
+   - En Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - En Linux/macOS:
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. **Instala las dependencias:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Uso
+
+1. **Entrenamiento (opcional si ya tienes un modelo):**
+
+   Si necesitas entrenar el modelo con tus propios datos:
+
+   ```bash
+   python main.py
+   # Selecciona la opción 1: Entrenar modelo
+   ```
+
+2. **Ejecutar la aplicación web:**
+
+   ```bash
+   python app.py
+   ```
+
+3. **Acceder a la interfaz:**
+
+   Abre tu navegador y ve a `http://127.0.0.1:5000/`.
+
+4. **Utilizar la aplicación:**
+
+   - Haz clic en el botón de micrófono para **iniciar la grabación**.
+   - Toca un acorde en tu guitarra.
+   - Haz clic nuevamente en el botón para **detener la grabación**.
+   - La aplicación mostrará el **acorde reconocido** y la **confianza** de la predicción.
+
+## Estructura del Proyecto
+
+reconocimiento_acordes/
+│
+├── data/
+│ ├── raw/ # Audios originales por acorde (ej: C/, G/, Am/)
+│ └── labels.json # Mapeo de nombre de acorde a índice
+├── models/
+│ └── modelo_entrenado.h5 # Modelo entrenado (guardado aquí)
+├── src/
+│ ├── preprocess.py # Preprocesamiento de audio
+│ ├── model.py # Definición del modelo
+│ ├── train.py # Entrenamiento del modelo
+│ ├── predict.py # Predicción en tiempo real (usado por Flask)
+│ └── utils.py # Funciones auxiliares
+├── static/
+│ ├── style.css # Hoja de estilos de la interfaz web
+│ └── script.js # Lógica del frontend (grabación/envío)
+├── templates/
+│ └── index.html # Página principal de la interfaz web
+├── app.py # Aplicación Flask principal
+├── main.py # Script para entrenar o predecir desde consola
+├── requirements.txt # Dependencias de Python
+└── README.md # Este archivo
+
+## Notas
+
+- Asegúrate de otorgar permiso al navegador para acceder al micrófono.
+- El modelo actual reconoce los acordes: Am, Bb, C, Dm, Em, F, G (puede variar según tu entrenamiento).
+- La precisión depende de la calidad y variedad de los datos de entrenamiento.
+- El archivo `predict.py` se utiliza internamente por `app.py` para realizar la predicción.
