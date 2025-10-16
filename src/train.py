@@ -16,9 +16,9 @@ def train_model():
 
     model = create_model(input_shape, num_classes)
 
-    # Compilamos SIN label_smoothing por compatibilidad
+    # Compilamos 
     model.compile(optimizer='adam',
-                  loss='sparse_categorical_crossentropy', # Quitamos label_smoothing
+                  loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 
     # Callback para detener si no mejora (Punto 2)
