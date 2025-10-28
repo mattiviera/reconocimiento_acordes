@@ -8,7 +8,7 @@ import io
 import os
 
 
-from src.utils import load_labels
+from src.modelo.utils import load_labels
 
 # --- Inicializar Flask ---
 app = Flask(__name__)
@@ -105,13 +105,19 @@ def predict():
         confidence = float(pred[0][chord_idx]) # Convertir a tipo Python para JSON
         chord = inv_labels[chord_idx]
 
-        # 4. Devolver la predicción como JSON
+        # --- Nueva lógica: Umbral de confianza ---
+        # Si la confianza es menor a 0.7, devolvemos un mensaje especial en lugar del acorde
+        if confidence < 0.7:
+            # Devolvemos un JSON con un campo 'unknown' o 'low_confidence' en lugar de 'chord'
+            # y opcionalmente la confianza detectada
+            return jsonify({'unknown': 'Confianza baja', 'confidence': confidence, 'message': 'No se reconoce el acorde con alta confianza.'})
+
+        # 4. Si la confianza es suficiente, devolver la predicción como antes
         return jsonify({'chord': chord, 'confidence': confidence})
 
     except Exception as e:
         print(f"Error en la predicción: {e}") # Imprime el error en la consola del servidor
         return jsonify({'error': f'Error interno del servidor: {str(e)}'}), 500
-
 
 # --- Punto de entrada ---
 if __name__ == '__main__':
