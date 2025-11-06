@@ -1,5 +1,9 @@
-from src.train import train_model
-from src.predict import predict_chord
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from src.modelo.train import train_model
+from src.modelo.predict import predict_chord
 
 def main():
     while True:
